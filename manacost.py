@@ -43,18 +43,18 @@ class Solution:
         # type pool: string
         # type cost: string
         # return: bool
-    
+
         # TODO: Write code below to return a bool with the solution to the prompt
         x = len(pool)
         for i in cost:
             if i in pool:
-                pool = pool.replace(i, "", i)
-                cost = cost.replace(i, '', i)
-                x -= 1
+                pool = pool.replace(i, '', 1)
+                cost = cost.replace(i, '', 1)
+                x -=1
         if len(cost) == 0:
             return True
-        if cost.digit():
-            return int(cost) <- x
+        if cost.isdigit():
+            return int(cost) <= x
         return False
 
 def main():
